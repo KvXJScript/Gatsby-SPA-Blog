@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/layout'
 import "../styles/blog.scss";
 import {Link, graphql, useStaticQuery} from 'gatsby';
+import SEO from "../components/seo";
 
 function BlogPage() {
 
@@ -26,6 +27,7 @@ function BlogPage() {
    
    return (
       <div className="blog">
+        <SEO title="Blog" />
          <Layout>
          <h1>Blog</h1>
          <p>Posts will show up later here</p>

@@ -37,9 +37,4 @@ const path = require('path');
          }
       })
    })
-    // 1. Get path to template
-    // 2. Ger markdown data
-    // 3. Create new pages
  }
- 
-// You can delete this file if you're not using it
