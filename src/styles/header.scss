@@ -1,0 +1,19 @@
+.nav-list{
+   display:flex;
+   list-style-type: none;
+   margin: 0;
+}
+
+.item{
+   margin-left: 3rem;
+   text-decoration: none;
+   color: #777777;
+
+   &:hover{
+      color: #111111;
+   }
+}
+
+.active-item{
+   color: #000;
+}

@@ -1,0 +1,26 @@
+.hello{
+   font-size: 5rem;
+}
+
+.posts{
+   list-style-type: none;
+   margin: 0;
+}
+
+.post{
+   margin: 1rem 0 0 1rem;
+   a {
+      text-decoration: none;
+      color: #111;
+
+      &:hover{
+         color: #555;
+      }
+   }
+}
+
+.date{
+   margin-left: 1rem;
+   font-style: italic;
+   color: #777;
+}
