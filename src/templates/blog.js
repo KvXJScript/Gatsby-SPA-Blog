@@ -10,7 +10,7 @@ query($slug: String!){
     title
     publishedDate(formatString: "MMMM Do, YYYY")
     body{
-      raw
+      json
     }
   }
 }
@@ -22,7 +22,7 @@ function blog(props) {
         
         <h1>{props.data.contentfulBlog.title}</h1>
         <p>{props.data.contentfulBlog.publishedDate}</p>
-        {documentToReactComponents(props.data.contentfulBlog.body.raw)}
+        {documentToReactComponents(props.data.contentfulBlog.body.json)}
       </Layout>
    )
 }
