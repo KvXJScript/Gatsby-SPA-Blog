@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './header';
 import Footer from './Footer';
-import '../styles/index.scss';
+import '../styles/_base.scss';
 
 function Layout({children}) {
   return (
