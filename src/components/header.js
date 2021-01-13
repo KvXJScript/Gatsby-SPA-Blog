@@ -21,27 +21,37 @@ function Header() {
          <nav>
             <ul className="header__list">
                <li>
-                  <Link to="/" className = "item" activeClassName="active-item">Home</Link>
+                  <Link to="/" className = "item" activeClassName="active-item">HOME</Link>
                </li>
                <li>
-                  <Link to="/blog" className = "item" activeClassName="active-item">Blog</Link>
+                  <Link to="/travel" className = "item" activeClassName="active-item">PODRÓŻ</Link>
                </li>
                <li>
-                  <Link to="/about" className = "item" activeClassName="active-item">About</Link>
+                  <Link to="/cracow" className = "item" activeClassName="active-item">KRAKÓW</Link>
                </li>
                <li>
-                  <Link to="/contact" className = "item" activeClassName="active-item">Contact</Link>
+                  <Link to="/lifestyle" className = "item" activeClassName="active-item">LIFESTYLE</Link>
+               </li>
+               <li>
+                  <Link to="/instagramplaces" className = "item" activeClassName="active-item">INSTAGRAMOWE MIEJSCA</Link>
+               </li>
+               <li>
+                  <Link to="/contact" className = "item" activeClassName="active-item">KONTAKT/WSPÓŁPRACA</Link>
                </li>
             </ul>
          </nav>
          <div className="header__top_search">
             <div className="header__top_search--icons">
                <ul>
-                  <li>
-                     <a href="https://www.facebook.com/beforeankadies/" activeClassName="active-link"><Instagram/> facebook</a>
-                     <a href="https://www.instagram.com/anka_roj/" activeClassName="active-link"><Instagram/>instagram</a>
-                     <a href="https://www.youtube.com/channel/UC7pBEcJd6wj3Je2l3VqSzjg?disable_polymer=1" activeClassName="active-link"><Instagram/>youtube</a>
-                  </li>
+                     <li>
+                        <a href="https://www.facebook.com/beforeankadies/" activeClassName="active-link"><Facebook/> facebook</a>
+                     </li>
+                     <li>
+                        <a href="https://www.instagram.com/anka_roj/" activeClassName="active-link"><Facebook/>instagram</a>
+                     </li>
+                     <li>
+                        <a href="https://www.youtube.com/channel/UC7pBEcJd6wj3Je2l3VqSzjg?disable_polymer=1" activeClassName="active-link"><Facebook/>youtube</a>
+                     </li>
                </ul>
             </div>
             <input type="text" placeholder="Wpisz swój temat" value = {searchValue} onChange={Search}/>
