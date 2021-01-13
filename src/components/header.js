@@ -44,13 +44,13 @@ function Header() {
             <div className="header__top_search--icons">
                <ul>
                      <li>
-                        <a href="https://www.facebook.com/beforeankadies/" activeClassName="active-link"><Facebook/> facebook</a>
+                        <a href="https://www.facebook.com/beforeankadies/"><Facebook/> facebook</a>
                      </li>
                      <li>
-                        <a href="https://www.instagram.com/anka_roj/" activeClassName="active-link"><Facebook/>instagram</a>
+                        <a href="https://www.instagram.com/anka_roj/"><Facebook/>instagram</a>
                      </li>
                      <li>
-                        <a href="https://www.youtube.com/channel/UC7pBEcJd6wj3Je2l3VqSzjg?disable_polymer=1" activeClassName="active-link"><Facebook/>youtube</a>
+                        <a href="https://www.youtube.com/channel/UC7pBEcJd6wj3Je2l3VqSzjg?disable_polymer=1"><Facebook/>youtube</a>
                      </li>
                </ul>
             </div>
