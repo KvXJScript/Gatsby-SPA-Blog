@@ -17,7 +17,33 @@ function Header() {
 
    return (
       <header className="header">
-         <Link to="/"><img src={Banner} alt="Banner"/></Link>
+         <div className="header__banner">
+            <Link to="/"><img src={Banner} alt="Banner"/></Link>
+         </div>
+         <div className="header__top_search">
+            <div className="header__top_search--icons">
+               <div>
+                  <ul>
+                  <li>
+                        <a href="https://www.facebook.com/beforeankadies/"><Facebook className="icon"/></a>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <ul>
+                  <li>
+                        <a href="https://www.instagram.com/anka_roj/"><Facebook className="icon"/></a>
+                     </li>
+                  </ul>
+               </div>
+               <ul>
+                     <li>
+                        <a href="https://www.youtube.com/channel/UC7pBEcJd6wj3Je2l3VqSzjg?disable_polymer=1"><Facebook className="icon"/></a>
+                     </li>
+               </ul>
+            </div>
+            <input type="text" placeholder="Wpisz swój temat..." value = {searchValue} onChange={Search}/>
+          </div>
          <nav>
             <ul className="header__list">
                <li>
@@ -40,22 +66,7 @@ function Header() {
                </li>
             </ul>
          </nav>
-         <div className="header__top_search">
-            <div className="header__top_search--icons">
-               <ul>
-                     <li>
-                        <a href="https://www.facebook.com/beforeankadies/"><Facebook/> facebook</a>
-                     </li>
-                     <li>
-                        <a href="https://www.instagram.com/anka_roj/"><Facebook/>instagram</a>
-                     </li>
-                     <li>
-                        <a href="https://www.youtube.com/channel/UC7pBEcJd6wj3Je2l3VqSzjg?disable_polymer=1"><Facebook/>youtube</a>
-                     </li>
-               </ul>
-            </div>
-            <input type="text" placeholder="Wpisz swój temat" value = {searchValue} onChange={Search}/>
-          </div>
+         
       </header>
    )
 }
