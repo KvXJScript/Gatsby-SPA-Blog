@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Link} from "gatsby";
+import {Link, graphql, useStaticQuery} from 'gatsby';
 import "../styles/_header.scss";
 import Banner from '../images/main.png';
 import Instagram from '../images/svg/instagram.svg'
@@ -7,6 +7,26 @@ import Youtube from '../images/svg/youtube.svg'
 import Facebook from '../images/svg/facebook.svg'
 
 function Header() {
+
+   const data = useStaticQuery(graphql`
+   query{
+    allContentfulBlog (
+      sort:{
+        fields: publishedDate,
+        order:DESC
+      }
+    ){
+      edges{
+        node{
+          title
+          id
+          slug
+          publishedDate(formatString:"MMMM Do, YYYY")
+        }
+      }
+    }
+  }
+   `)
 
    const [searchValue, setSearchValue] = useState("");
   

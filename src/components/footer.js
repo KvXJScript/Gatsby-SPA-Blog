@@ -5,7 +5,7 @@ function Footer() {
 
    return (
       <footer className="footer"> 
-         <p>Created by KvX</p>
+         
       </footer>
    )
 }

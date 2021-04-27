@@ -1,30 +1,65 @@
-.hello{
-   font-size: 5rem;
+@import "./_base.scss";
+
+.posts {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.posts{
-   list-style-type: none;
-   margin: 0;
-   display:flex;
-   flex-direction: column;
+.post {
+  margin: 1rem 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30rem;
+  font-size: 1.5rem;
+  font-weight: thin;
+  color: $color-gray-dark;
+  a {
+    text-decoration: none;
+    color: #111;
+
+    &:hover {
+      color: #555;
+    }
+  }
+  & h2 {
+    font-size: 5rem;
+    font-weight: 300;
+    color: rgb(37, 37, 37);
+    transition: 0.1s ease-in;
+    letter-spacing: 4px;
+    border-bottom: 1px dashed $color-gray-white;
+
+    &:hover {
+      transform: translateY(-5px);
+      color: rgb(90, 90, 90);
+    }
+  }
+  &__title {
+    width: 60vw;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    padding-top: 3rem;
+    width: 30vw;
+
+    & p {
+      margin-left: 1rem;
+      letter-spacing: 1px;
+      font-style: italic;
+      color: #777;
+    }
+  }
 }
 
-.post{
-   margin: 1rem 0 0 1rem;
-   height: 30rem;
-   width: 80vw;
-   a {
-      text-decoration: none;
-      color: #111;
-
-      &:hover{
-         color: #555;
-      }
-   }
-}
-
-.date{
-   margin-left: 1rem;
-   font-style: italic;
-   color: #777;
+.beforeankadies {
+  transition: 0.1s ease-in;
+  hover: {
+    color: rgb(90, 90, 90);
+  }
 }

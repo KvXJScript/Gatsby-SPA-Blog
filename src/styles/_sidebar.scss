@@ -1,4 +1,90 @@
-.sidebar{
-   grid-row: 2/3;
-   grid-column: 10/-1;
+@import "./base";
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: rgb(102, 102, 102);
+
+  &__heading,
+  &__instagram,
+  &__related,
+  &__topics {
+    text-align: center;
+    padding-bottom: 3rem;
+    letter-spacing: 2px;
+    & p {
+      font-size: 3.5rem;
+      display: flex;
+      text-align: center;
+
+      & span {
+        padding-right: 2rem;
+      }
+    }
+  }
+
+  &__list {
+    & ul {
+      & li {
+        font-size: 2rem;
+        padding: 2.5rem 0;
+        width: 100%;
+        border-top: 1px dashed $color-gray;
+        cursor: pointer;
+        &:hover {
+          color: #111;
+        }
+      }
+    }
+  }
+
+  &__photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repear(4, 1fr);
+    grid-gap: 2rem;
+    padding-bottom: 3rem;
+
+    & img {
+      width: 9rem;
+      height: 9rem;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        transform: translateY(-6px);
+      }
+    }
+  }
+
+  &__related {
+    padding-top: 3rem;
+
+    & p {
+      padding-bottom: 2.5rem;
+    }
+    & span {
+      padding-right: 2.5rem;
+    }
+  }
+
+  &__topics {
+    padding-top: 3rem;
+  }
+}
+
+select {
+  color: rgb(65, 65, 65);
+  width: 100%;
+  min-width: 15ch;
+  max-width: 25ch;
+  border: 2px solid $color-gray-dark;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 2.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
 }

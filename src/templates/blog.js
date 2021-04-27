@@ -2,12 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import "../styles/pages-styles/_blog.scss";
+import Sidebar from '../components/Sidebar'
 
 import Layout from "../components/layout"
 
 export const query = graphql`
   query($slug: String!) {
     contentfulBlog(slug: { eq: $slug }) {
+      id
       title
       publishedDate(formatString: "MMMM Do, YYYY")
       body {
@@ -27,7 +29,7 @@ function blog(props) {
       },
     },
   }
-
+  console.log(props.data);
   return (
     <Layout>
       <div className="blog">
@@ -37,15 +39,8 @@ function blog(props) {
             options
           )}
         </div>
-        <div className="blog__title">
-          <h1>{props.data.contentfulBlog.title}</h1>
-        </div>
-        <div className="blog__info">
-          <p>{props.data.contentfulBlog.publishedDate}</p>
-          <p>Beforeankadies</p>
-          <p>14 Komentarzy</p>
-        </div>
       </div>
+      <Sidebar/>
     </Layout>
   )
 }

@@ -1,11 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import "../styles/_main.scss";
 import SEO from "../components/seo";
 import Layout from '../components/layout';
 import Blog from './blog';
-import {ReactComponent as IconSmall} from '../images/svg/helper24x24.svg'
-import {ReactComponent as IconBig} from '../images/svg/helper32x32.svg'
-import {ReactComponent as Triangle} from '../images/svg/nav-triangle.svg'
+import Sidebar from '../components/Sidebar';
 
 function IndexPage() {
   
@@ -14,6 +12,7 @@ function IndexPage() {
     <SEO title="main" />
       <main className="main">
         <Blog/>
+        <Sidebar/>
       </main>
   </Layout>
   )
