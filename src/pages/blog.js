@@ -47,9 +47,9 @@ function BlogPage() {
                 </Link>
                 <div className="post__info">
                 <p>{node.publishedDate}</p>
-                <Link href="https://www.instagram.com/anka_roj/" target="_blank">
+                <a href="https://www.instagram.com/anka_roj/" target="_blank" rel="noopener noreferrer">
                  <p className="beforeankadies">beforeankadies</p>
-                 </Link>
+                 </a>
                  <p>14 komentarzy</p>
                 </div>
 

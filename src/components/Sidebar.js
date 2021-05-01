@@ -47,46 +47,46 @@ function Sidebar() {
     <div className="sidebar">
       <div className="sidebar__heading">
         <p>
-          {" "}
           <span>
             <Helper />
-          </span>{" "}
+          </span>
           Najnowsze wpisy
         </p>
       </div>
       <div className="sidebar__list">
         <ul>
         { data.allContentfulBlog && renderer.map(item => (
-          <li key={item.node.id}>{item.node.title}</li>
+          <Link href={item.node.slug}>
+            <li key={item.node.id}>{item.node.title}</li>
+          </Link>
         ))}
         </ul>
       </div>
       
       <div className="sidebar__instagram">
         <p>
-          {" "}
           <span>
             <Helper />
-          </span>{" "}
+          </span>
           Instagram
         </p>
       </div>
-      <Link href="https://www.instagram.com/anka_roj/" target="_blank">
+      <a href="https://www.instagram.com/anka_roj/" target="_blank" rel="noopener noreferrer">
       <div className="sidebar__photos">
-        <img src={Photo1} alt="photo" />
-        <img src={Photo2} alt="photo" />
-        <img src={Photo3} alt="photo" />
-        <img src={Photo4} alt="photo" />
-        <img src={Photo5} alt="photo" />
-        <img src={Photo6} alt="photo" />
-        <img src={Photo7} alt="photo" />
-        <img src={Photo8} alt="photo" />
-        <img src={Photo9} alt="photo" />
-        <img src={Photo10} alt="photo" />
-        <img src={Photo11} alt="photo" />
-        <img src={Photo12} alt="photo" />
+        <img src={Photo1} alt="photo1" />
+        <img src={Photo2} alt="photo2" />
+        <img src={Photo3} alt="photo3" />
+        <img src={Photo4} alt="photo4" />
+        <img src={Photo5} alt="photo5" />
+        <img src={Photo6} alt="photo6" />
+        <img src={Photo7} alt="photo7" />
+        <img src={Photo8} alt="photo8" />
+        <img src={Photo9} alt="photo9" />
+        <img src={Photo10} alt="photo10" />
+        <img src={Photo11} alt="photo11" />
+        <img src={Photo12} alt="photo12" />
       </div>
-      </Link>
+      </a>
 
       <div className="sidebar__related">
          <p>

@@ -9,7 +9,7 @@ import Sidebar from '../components/Sidebar';
 import Layout from '../components/layout';
 import Loader from '../misc/Loader';
 
-function LifeStyle() {
+function InstagramPlaces() {
 
   const [timeoutCheck, setTimeoutCheck] = useState(false);
 
@@ -37,7 +37,7 @@ function LifeStyle() {
     }
   }
    `)
-   const travelParams = data.allContentfulBlog.edges.find(item => item.node.slug === "Lifestyle")
+   const travelParams = data.allContentfulBlog.edges.find(item => item.node.slug === "Instagram")
    let converter = [];
    if(travelParams){
       converter.push(travelParams)
@@ -47,8 +47,8 @@ function LifeStyle() {
         <Layout>
       <main className="main">
         <div className="blog">
-        <SEO title="Life Style" />
-         <ol className="posts" style={{display: timeoutCheck ? "flex" : "none"}}>
+        <SEO title="Instagramowe miejsca" />
+        <ol className="posts" style={{display: timeoutCheck ? "flex" : "none"}}>
            {converter.map(({node}) =>{
           return(
             <>
@@ -83,4 +83,4 @@ function LifeStyle() {
    )
 }
 
-export default LifeStyle
+export default InstagramPlaces

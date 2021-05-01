@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {Link, graphql, useStaticQuery} from 'gatsby';
 import "../styles/_header.scss";
 import Banner from '../images/main.png';
@@ -70,19 +70,19 @@ function Header() {
                   <Link to="/" className = "item" activeClassName="active-item">HOME</Link>
                </li>
                <li>
-                  <Link to="/travel" className = "item" activeClassName="active-item">PODRÓŻ</Link>
+                  <Link to="/Podróż" className = "item" activeClassName="active-item">PODRÓŻ</Link>
                </li>
                <li>
-                  <Link to="/cracow" className = "item" activeClassName="active-item">KRAKÓW</Link>
+                  <Link to="/Kraków" className = "item" activeClassName="active-item">KRAKÓW</Link>
                </li>
                <li>
-                  <Link to="/lifestyle" className = "item" activeClassName="active-item">LIFESTYLE</Link>
+                  <Link to="/Lifestyle" className = "item" activeClassName="active-item">LIFESTYLE</Link>
                </li>
                <li>
-                  <Link to="/instagramplaces" className = "item" activeClassName="active-item">INSTAGRAMOWE MIEJSCA</Link>
+                  <Link to="/Instagramowemiejsca" className = "item" activeClassName="active-item">INSTAGRAMOWE MIEJSCA</Link>
                </li>
                <li>
-                  <Link to="/contact" className = "item" activeClassName="active-item">KONTAKT/WSPÓŁPRACA</Link>
+                  <Link to="/Kontakt" className = "item" activeClassName="active-item">KONTAKT/WSPÓŁPRACA</Link>
                </li>
             </ul>
          </nav>

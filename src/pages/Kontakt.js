@@ -7,11 +7,11 @@ import "../styles/pages-styles/_contact.scss"
 function ContactPage() {
    return (
       <div className="contact">
-         <SEO title="Contact" />
+         <SEO title="Kontakt" />
          <Layout>
          <h1>Hello here you can contact us!</h1>
          <p>feel free to sign in</p>
-         <Link to="https://twitter.com/KevinSvenson_">Twitter</Link>
+         <a to="https://twitter.com/KevinSvenson_">Twitter</a>
          </Layout>
       </div>
    )

@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 function AboutPage() {
    return (
       <div>
-         <SEO title="About" />
+         <SEO title="O blogu" />
          <Layout>
          <h1>About page</h1>
          <p>Hello my name is Paweł</p>
