@@ -12,20 +12,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 30rem;
+  height: 35rem;
   font-size: 1.5rem;
   font-weight: thin;
   color: $color-gray-dark;
   a {
     text-decoration: none;
     color: #111;
+    font-weight: bold;
 
     &:hover {
       color: #555;
     }
   }
   & h2 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 300;
     color: rgb(37, 37, 37);
     transition: 0.1s ease-in;
@@ -38,15 +39,34 @@
     }
   }
   &__title {
-    width: 60vw;
+    width: 30vw;
+  }
+
+  &__content {
+    font-size: 2rem;
+    color: rgb(63, 63, 63);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  &__more {
+    font-size: 2.5rem;
+    color: #000;
+    transition: 0.3s ease-in;
+    padding-top: 2rem;
+
+    &:hover {
+      color: rgb(63, 63, 63);
+    }
   }
 
   &__info {
     display: flex;
     justify-content: space-between;
     font-size: 2rem;
-    padding-top: 3rem;
+    padding: 3rem 0;
     width: 30vw;
+    border-bottom: 1px dashed $color-gray-white;
 
     & p {
       margin-left: 1rem;
@@ -65,5 +85,5 @@
 }
 
 .loader {
-  width: 60vw;
+  width: 30vw;
 }

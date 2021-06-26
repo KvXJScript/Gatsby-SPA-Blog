@@ -67,22 +67,22 @@ function Header() {
          <nav>
             <ul className="header__list">
                <li>
-                  <Link to="/" className = "item" activeClassName="active-item">HOME</Link>
+                  <Link to="/" className = "item" >HOME</Link>
                </li>
                <li>
-                  <Link to="/Podróż" className = "item" activeClassName="active-item">PODRÓŻ</Link>
+                  <Link to="/Podróż" className = "item" >PODRÓŻ</Link>
                </li>
                <li>
-                  <Link to="/Kraków" className = "item" activeClassName="active-item">KRAKÓW</Link>
+                  <Link to="/Kraków" className = "item" >KRAKÓW</Link>
                </li>
                <li>
-                  <Link to="/Lifestyle" className = "item" activeClassName="active-item">LIFESTYLE</Link>
+                  <Link to="/Lifestyle" className = "item" >LIFESTYLE</Link>
                </li>
                <li>
-                  <Link to="/Instagramowemiejsca" className = "item" activeClassName="active-item">INSTAGRAMOWE MIEJSCA</Link>
+                  <Link to="/blog/Kontakt" className = "item" >KONTAKT/WSPÓŁPRACA</Link>
                </li>
-               <li>
-                  <Link to="/Kontakt" className = "item" activeClassName="active-item">KONTAKT/WSPÓŁPRACA</Link>
+               <li className="Link__Background">
+                  <a href="https://pdf-reader.en.softonic.com/download" target="_blank" rel="noopener noreferrer" className = "item" >E-BOOK O KRAKOWIE</a>
                </li>
             </ul>
          </nav>

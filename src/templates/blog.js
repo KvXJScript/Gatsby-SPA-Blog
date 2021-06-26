@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import "../styles/pages-styles/_blog.scss";
 import Sidebar from '../components/Sidebar'
+import "../styles/_main.scss"
 
 import Layout from "../components/layout"
 
@@ -19,7 +20,7 @@ export const query = graphql`
   }
 `
 
-function blog(props) {
+function Blog(props) {
   const options = {
     renderNode: {
       "embedded-asset-block": node => {
@@ -29,20 +30,22 @@ function blog(props) {
       },
     },
   }
-  console.log(props.data);
+
   return (
     <Layout>
+      <main className="main">
       <div className="blog">
         <div className="blog__image">
           {documentToReactComponents(
-            props.data.contentfulBlog.body.json,
+            props.data.contentfulBlog.body !== null && props.data.contentfulBlog.body.json,
             options
           )}
         </div>
       </div>
       <Sidebar/>
+      </main>
     </Layout>
   )
 }
 
-export default blog
+export default Blog

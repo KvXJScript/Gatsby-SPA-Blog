@@ -1,75 +1,79 @@
 @import "./base";
 
-.item{
-   margin-left: 3rem;
-   letter-spacing: 1px;
-   text-decoration: none;
-   color: #000;
-   font-size: 1.8rem;
-   transition: ease-in;
-   transition-duration: .01s;
-   
+.item {
+  margin-left: 3rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.8rem;
+  transition: ease-in;
+  transition-duration: 0.01s;
 
-   &:hover{
-      color: $color-gray-dark
-   }
+  &:hover {
+    color: $color-gray-dark;
+  }
 }
 
-.active-item{
-   color: #000;
+.active-item {
+  color: #000;
 }
 
-.header{
-   grid-column: 1/-1;
-   margin: 0 auto;
-   margin-bottom: 3rem;
-   width: 100%;
+.header {
+  grid-row: 1/2;
+  grid-column: 1/-1;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  width: 100%;
 
-   &__banner{
-      width: 100%;
-      display:flex;
-      align-items: center;
-      justify-content: center;
-   }
-   
-   &__list{
+  &__banner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    border-bottom: 1px dashed $color-gray-white;
+  }
+
+  &__top_search {
+    padding: 2rem 0;
+    border-bottom: 1px dashed $color-gray-white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &--icons {
+      width: 20rem;
+      margin-right: 5rem;
+      justify-self: flex-end;
+      margin-left: auto;
       display: flex;
-      justify-content: space-between;
-      padding: 2rem 1rem;
-      border-bottom: 1px dashed $color-gray-white
-   }
-
-   &__top_search{
-      padding: 2rem 0;
-      border-bottom: 1px dashed $color-gray-white;
-      width: 100%; 
-      display: flex;
-      align-items: center;
-
-
-      &--icons{
-         width: 20rem;
-         margin-right: 5rem;
-         justify-self: flex-end;
-         margin-left: auto;
-         display:flex;
-         justify-content: space-around; 
-      }
-      & input{
-         width: 25rem;
-         padding: 1rem 2rem;
-         border: 2px solid $color-gray;
-         border-radius: 8px;
-         font-size: 1.5rem;
-      }
-   }
-
+      justify-content: space-around;
+    }
+    & input {
+      width: 25rem;
+      padding: 1rem 2rem;
+      border: 2px solid $color-gray;
+      border-radius: 8px;
+      font-size: 1.5rem;
+    }
+  }
 }
 
-.icon{
-   transition: ease-in-out;
-   fill: red;
-   &:hover{
-      fill: black
-   }
+.icon {
+  transition: ease-in-out;
+  fill: red;
+  &:hover {
+    fill: black;
+  }
+}
+
+.Link__Background {
+  background-color: rgb(0, 255, 234);
+  border-bottom: 2px solid black;
+  width: 26rem;
 }

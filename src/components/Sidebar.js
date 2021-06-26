@@ -19,7 +19,7 @@ import {Link, graphql, useStaticQuery} from 'gatsby';
 
 
 
-function Sidebar() {
+function Sidebar({date, handleDate}) {
 
   const data = useStaticQuery(graphql`
    query{
@@ -55,9 +55,9 @@ function Sidebar() {
       </div>
       <div className="sidebar__list">
         <ul>
-        { data.allContentfulBlog && renderer.map(item => (
-          <Link href={item.node.slug}>
-            <li key={item.node.id}>{item.node.title}</li>
+        {data.allContentfulBlog && renderer.map(item => (
+          <Link href={item.node.slug} key={item.node.id}>
+            <li>{item.node.title}</li>
           </Link>
         ))}
         </ul>
@@ -95,7 +95,7 @@ function Sidebar() {
           </span>
           Archiwum
         </p>
-         <select name="" id="">
+         <select name="" id="" value={date} onChange ={handleDate}>
             <option value="miesiąc">Wybierz miesiąc</option>
             <option value="Styczeń">Styczeń 2021</option>
             <option value="Luty">Luty 2021</option>
@@ -112,6 +112,15 @@ function Sidebar() {
           </span>
           Najpopularniejsze Tematy
         </p>
+        <div className="sidebar__hashmap">
+          <ul className="sidebar__hashmap__wrapper">
+          {data && data.allContentfulBlog.edges.map(item =>(
+            <Link href={item.node.slug}>
+              <li className="sidebar__hashmap__items">{item.node.slug}</li>
+            </Link>
+          ))}
+          </ul>
+        </div>
       </div>
     </div>
   )

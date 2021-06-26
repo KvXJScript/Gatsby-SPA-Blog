@@ -30,21 +30,25 @@ function BlogPage() {
     }
   }
    `)
+   const renderer = data.allContentfulBlog.edges.slice(0,10)
+   console.log(renderer);
    
    return (
+     <main className="main">
       <div className="blog">
         <SEO title="Blog" />
          <ol className="posts">
-           {data.allContentfulBlog.edges.map(({node}) =>{
+           {renderer.map(({node}) =>{
           return(
-            <>
-            <img src={Custom} alt="postImage"/>
-            <li key={node.title} className="post" id={node.id}>
-              <Link to={`/blog/${node.slug}`}>
+            <React.Fragment key={node.id}>
+            <Link to={`/blog/${node.slug}`}>
+            <img src={Custom} alt="postImage" className="post__image"/>
+            <li className="post" id={node.id}>
+              
                 <div className="post__title">
                   <h2>{node.title}</h2>
                 </div>
-                </Link>
+                
                 <div className="post__info">
                 <p>{node.publishedDate}</p>
                 <a href="https://www.instagram.com/anka_roj/" target="_blank" rel="noopener noreferrer">
@@ -54,11 +58,13 @@ function BlogPage() {
                 </div>
 
              </li>
-             </>
+             </Link>
+             </React.Fragment>
           )
          })}
          </ol>
       </div>
+      </main>
    )
 }
 

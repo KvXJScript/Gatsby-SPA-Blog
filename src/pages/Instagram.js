@@ -51,9 +51,9 @@ function InstagramPlaces() {
         <ol className="posts" style={{display: timeoutCheck ? "flex" : "none"}}>
            {converter.map(({node}) =>{
           return(
-            <>
-            <img src={Custom} alt="postImage"/>
-            <li key={node.title} className="post" id={node.id}>
+            <React.Fragment  key={node.title}>
+            <img src={Custom} alt="postImage" className="post__image"/>
+            <li className="post" id={node.id}>
               <Link to={`/blog/${node.slug}`}>
                 <div className="post__title">
                   <h2>{node.title}</h2>
@@ -68,7 +68,7 @@ function InstagramPlaces() {
                 </div>
 
              </li>
-             </>
+             </React.Fragment>
           )
          })}
          </ol>

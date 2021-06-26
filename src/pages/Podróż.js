@@ -50,9 +50,9 @@ function Travel() {
           >
             {converter.map(({ node }) => {
               return (
-                <>
-                  <img src={Custom} alt="postImage" />
-                  <li key={node.title} className="post" id={node.id}>
+                <React.Fragment key={node.title}>
+                  <img src={Custom} alt="postImage" className="post__image" />
+                  <li className="post" id={node.id}>
                     <Link to={`/blog/${node.slug}`}>
                       <div className="post__title">
                         <h2>{node.title}</h2>
@@ -70,11 +70,14 @@ function Travel() {
                       <p>14 komentarzy</p>
                     </div>
                   </li>
-                </>
+                </React.Fragment>
               )
             })}
           </ol>
-          <div className="loader" style={{display: !timeoutCheck ? "block" : "none"}}>
+          <div
+            className="loader"
+            style={{ display: !timeoutCheck ? "block" : "none" }}
+          >
             <Loader />
           </div>
         </div>
