@@ -2,38 +2,26 @@ import React, {useState} from "react";
 import {Link, graphql, useStaticQuery} from 'gatsby';
 import "../styles/_header.scss";
 import Banner from '../images/main.png';
-import Instagram from '../images/svg/instagram.svg'
-import Youtube from '../images/svg/youtube.svg'
-import Facebook from '../images/svg/facebook.svg'
+import Instagram from '../images/instagram.png'
+import Youtube from '../images/youtube.png'
+import Facebook from '../images/facebook.png'
+import PDF from '../images/123.pdf'
+import {Document, Page} from 'react-pdf';
 
 function Header() {
 
-   const data = useStaticQuery(graphql`
-   query{
-    allContentfulBlog (
-      sort:{
-        fields: publishedDate,
-        order:DESC
-      }
-    ){
-      edges{
-        node{
-          title
-          id
-          slug
-          publishedDate(formatString:"MMMM Do, YYYY")
-        }
-      }
-    }
-  }
-   `)
-
    const [searchValue, setSearchValue] = useState("");
+   const [numPages, setNumPages] = useState(null);
+   const [pageNumber, setPageNumber] = useState(1);
   
    const Search = ({target:{value}})=>{
      setSearchValue(value);
      console.log(value);
    }
+
+    const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  }
 
    return (
       <header className="header">
@@ -45,20 +33,20 @@ function Header() {
                <div>
                   <ul>
                   <li>
-                        <a href="https://www.facebook.com/beforeankadies/"><Facebook className="icon"/></a>
+                        <a href="https://www.facebook.com/beforeankadies/" target="_blank"><img src={Facebook} alt="Facebook" className="icon" /></a>
                      </li>
                   </ul>
                </div>
                <div>
                   <ul>
                   <li>
-                        <a href="https://www.instagram.com/anka_roj/"><Facebook className="icon"/></a>
+                        <a href="https://www.instagram.com/anka_roj/" target="_blank"><img src={Instagram} alt="Instagram" className="icon" /></a>
                      </li>
                   </ul>
                </div>
                <ul>
                      <li>
-                        <a href="https://www.youtube.com/channel/UC7pBEcJd6wj3Je2l3VqSzjg?disable_polymer=1"><Facebook className="icon"/></a>
+                        <a href="https://www.youtube.com/channel/UC7pBEcJd6wj3Je2l3VqSzjg?disable_polymer=1" target="_blank"><img src={Youtube} alt="Youtube" className="icon" /></a>
                      </li>
                </ul>
             </div>
@@ -84,6 +72,12 @@ function Header() {
                <li className="Link__Background">
                   <a href="https://pdf-reader.en.softonic.com/download" target="_blank" rel="noopener noreferrer" className = "item" >E-BOOK O KRAKOWIE</a>
                </li>
+               {/* <li>
+                  <Document file={PDF} onLoadSuccess={onDocumentLoadSuccess}>
+                  <Page pageNumber={pageNumber} />
+                  </Document>
+                  <p>Page {pageNumber} of {numPages}</p>
+               </li> */}
             </ul>
          </nav>
          

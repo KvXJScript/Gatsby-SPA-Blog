@@ -67,8 +67,9 @@
 .icon {
   transition: ease-in-out;
   fill: red;
+  transition: 0.1s ease-in-out;
   &:hover {
-    fill: black;
+    transform: translateY(-5px);
   }
 }
 

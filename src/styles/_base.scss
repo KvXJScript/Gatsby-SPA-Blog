@@ -7,8 +7,6 @@ $color-gray-dark: #aaaaaa;
 $color-info: #b1b1b1;
 $color-title: #272727;
 
-$font-primary: "Roboto Mono";
-
 *,
 *::before,
 *::after {
@@ -23,7 +21,7 @@ html {
 }
 
 body {
-  font-family: $font-primary;
+  font-family: "Playfair Display", serif;
   color: $color-secondary;
   font-weight: 300;
   line-height: 1.6;

@@ -8,12 +8,10 @@ import Layout from "../components/layout"
 import Loader from "../misc/Loader"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-
-
 function IndexPage(props) {
   const [timeoutCheck, setTimeoutCheck] = useState(false)
   const [date, setDate] = useState("")
-  const [filteredValues, setFilteredValues] = useState(null);
+  const [filteredValues, setFilteredValues] = useState(null)
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,8 +19,12 @@ function IndexPage(props) {
     }, 2000)
   }, [])
 
-  useEffect(()=>{
-    const filteredValues = data.allContentfulBlog.edges.filter(item => item.node.publishedDate.split(" ")[0] === date);
+  useEffect(() => {
+    const filteredValues =
+      data.allContentfulBlog &&
+      data.allContentfulBlog.edges.filter(
+        item => item.node.publishedDate.split(" ")[0] === date
+      )
     setFilteredValues(filteredValues)
   }, [date])
 
@@ -43,7 +45,7 @@ function IndexPage(props) {
     }
   `)
 
-   const options = {
+  const options = {
     renderNode: {
       "embedded-asset-block": node => {
         const alt = node.data.target.fields.title["en-US"]
@@ -52,10 +54,8 @@ function IndexPage(props) {
       },
     },
   }
-  
-  console.log(data.allContentfulBlog.edges.map(({node}) => node.body && node.body.json));
 
-  const handleDate = ({target:{value}}) => {
+  const handleDate = ({ target: { value } }) => {
     if (value === "Styczeń") setDate("January")
     if (value === "Luty") setDate("February")
     if (value === "Marzec") setDate("March")
@@ -84,80 +84,95 @@ function IndexPage(props) {
             )}
             {date ? (
               <>
-              {filteredValues.map(({ node }) => {
-                  return (
-                    <React.Fragment key={node.title}>
+                {filteredValues &&
+                  filteredValues.map(({ node }) => {
+                    return (
+                      <React.Fragment key={node.title}>
                         <div>
-                      {documentToReactComponents(
-            props.data.contentfulBlog.body !== null && props.data.contentfulBlog.body.json,
-            options
-          )}
-                      <li className="post" id={node.id}>
-                          <div className="post__title">
-                            <Link to={`/blog/${node.slug}`}>
-                            <h2>{node.title}</h2>
-                            </Link>
-                          </div>
-                        <div className="post__info">
-                          <p>{node.publishedDate}</p>
-                          <a
-                            href="https://www.instagram.com/anka_roj/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <p className="beforeankadies">beforeankadies</p>
-                          </a>
-                          <p>14 komentarzy</p>
+                          <img
+                          src={Custom}
+                          alt="postImage"
+                          className="post__image"
+                        />
+                          <li className="post" id={node.id}>
+                            <div className="post__title">
+                              <Link to={`/blog/${node.slug}`}>
+                                <h2>{node.title}</h2>
+                              </Link>
+                            </div>
+                            <div className="post__info">
+                              <p>{node.publishedDate}</p>
+                              <a
+                                href="https://www.instagram.com/anka_roj/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <p className="beforeankadies">beforeankadies</p>
+                              </a>
+                              <p>14 komentarzy</p>
+                            </div>
+                             <p className="post__content">
+                            {node.body &&
+                              node.body.json.content[0].content[0] &&
+                              node.body.json.content[0].content[0].value.substring(
+                                0,
+                                200
+                              )}
+                          </p>
+                          <p className="post__more">
+                            <Link to={`/blog/${node.slug}`}>Czytaj dalej</Link>
+                          </p>
+                          </li>
+                         
                         </div>
-                      </li>
-                      <p className="post__content">
-                        {node.body && node.body.json.content[0].content[0] && node.body.json.content[0].content[0].value.substring(0, 200)}
-                      </p>
-                      <p className="post__more">
-                        <Link to={`/blog/${node.slug}`}>Czytaj dalej</Link>
-                      </p>
-                      </div>
-                    </React.Fragment>
-                  )
-                })}
+                      </React.Fragment>
+                    )
+                  })}
               </>
             ) : (
               <>
-                {data.allContentfulBlog.edges.map(({ node }) => {
-                  return (
-                    <React.Fragment key={node.title}>
-                      <img
-                        src={Custom}
-                        alt="postImage"
-                        className="post__image"
-                      />
-                      <li className="post" id={node.id}>
-                        <Link to={`/blog/${node.slug}`}>
-                          <div className="post__title">
-                            <h2>{node.title}</h2>
+                {data.allContentfulBlog &&
+                  data.allContentfulBlog.edges.map(({ node }) => {
+                    return (
+                      <React.Fragment key={node.title}>
+                        <img
+                          src={Custom}
+                          alt="postImage"
+                          className="post__image"
+                        />
+                        <li className="post" id={node.id}>
+                          <Link to={`/blog/${node.slug}`}>
+                            <div className="post__title">
+                              <h2>{node.title}</h2>
+                            </div>
+                          </Link>
+                          <div className="post__info">
+                            <p>{node.publishedDate}</p>
+                            <a
+                              href="https://www.instagram.com/anka_roj/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <p className="beforeankadies">beforeankadies</p>
+                            </a>
+                            <p>14 komentarzy</p>
                           </div>
-                        </Link>
-                        <div className="post__info">
-                          <p>{node.publishedDate}</p>
-                          <a
-                            href="https://www.instagram.com/anka_roj/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <p className="beforeankadies">beforeankadies</p>
-                          </a>
-                          <p>14 komentarzy</p>
-                        </div>
-                         <p className="post__content">
-                        {node.body && node.body.json.content[0].content[0] && node.body.json.content[0].content[0].value.substring(0, 200)}...
-                      </p>
-                       <p className="post__more">
-                        <Link to={`/blog/${node.slug}`}>Czytaj dalej</Link>
-                      </p>
-                      </li>
-                    </React.Fragment>
-                  )
-                })}
+                          <p className="post__content">
+                            {node.body &&
+                              node.body.json.content[0].content[0] &&
+                              node.body.json.content[0].content[0].value.substring(
+                                0,
+                                200
+                              )}
+                            ...
+                          </p>
+                          <p className="post__more">
+                            <Link to={`/blog/${node.slug}`}>Czytaj dalej</Link>
+                          </p>
+                        </li>
+                      </React.Fragment>
+                    )
+                  })}
               </>
             )}
           </ol>
